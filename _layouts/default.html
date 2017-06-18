@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper blue darken-2">
+            <a href="#!" class="brand-logo">{{ site.name }}</a>
+            <a href="#" data-activates="mobile-drawer" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                {% assign current = page.url | downcase | split: '/' %}
+                {% include navigation.html %}
+            </ul>
+            <ul class="side-nav" id="mobile-drawer">
+                {% assign current = page.url | downcase | split: '/' %}
+                {% include navigation.html %}
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            {{ content }}
+        </div>
+    </main>
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                {% include svg-icons.html %}
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 William Oldham
+            </div>
+        </div>
+    </footer>
+    </div>
+    {% include analytics.html %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="{{ site.baseurl }}/main.js"></script>
+</body>
+
+</html>

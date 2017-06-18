@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+nav li a {
+    margin-left: 0 !important;
+}
+
+nav {
+    margin-top: 0 !important;
+}
